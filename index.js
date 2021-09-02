@@ -14,7 +14,7 @@ refs.stopBtnRef.addEventListener('click', onStopBtnClick);
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
-console.log(randomIntegerFromInterval(0, colors.length));
+
 function onStartBtnClick() {
   startId = setInterval(() => {
     refs.startBtnRef.setAttribute('disabled', 'disabled');
