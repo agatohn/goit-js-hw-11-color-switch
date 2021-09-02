@@ -18,7 +18,7 @@ const randomIntegerFromInterval = (min, max) => {
 function onStartBtnClick() {
   startId = setInterval(() => {
     refs.startBtnRef.setAttribute('disabled', 'disabled');
-    const currentColor = colors[randomIntegerFromInterval(0, colors.length)];
+    const currentColor = colors[randomIntegerFromInterval(0, colors.length - 1)];
     refs.bodyRef.style.backgroundColor = currentColor;
   }, 500);
 }
