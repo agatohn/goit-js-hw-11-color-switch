@@ -14,15 +14,16 @@ refs.stopBtnRef.addEventListener('click', onStopBtnClick);
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
-
+console.log(randomIntegerFromInterval(0, colors.length));
 function onStartBtnClick() {
   startId = setInterval(() => {
-    refs.startBtnRef.classList.add('disabled');
-    refs.bodyRef.style.backgroundColor = colors.getValue(randomIntegerFromInterval());
-  }, 2000);
+    refs.startBtnRef.setAttribute('disabled', 'disabled');
+    const currentColor = colors[randomIntegerFromInterval(0, colors.length)];
+    refs.bodyRef.style.backgroundColor = currentColor;
+  }, 500);
 }
 
 function onStopBtnClick() {
-  refs.startBtnRef.classList.remove('disabled');
+  refs.startBtnRef.removeAttribute('disabled');
   clearInterval(startId);
 }
